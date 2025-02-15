@@ -17,12 +17,15 @@ class IngresosUsuarios:
         self.conexion = conexion
 
     def ingreso_usuario(self):
-        nombre_user = str(input("Ingresa tu nombre: "))
-        apellido_user = str(input("Ingresa tu apellido: "))
-        self.conexion.cursor.execute("INTO FROM usuario (nombre_user, apellido_user) VALUES (?,?)",(nombre_user,apellido_user))
-        self.conexion.commit()
-        print(f"el usuario {nombre_user} {apellido_user} registrado con exito.")
+        try:
+            nombre_user = str(input("Ingresa tu nombre: "))
+            apellido_user = str(input("Ingresa tu apellido: "))
+            self.conexion.cursor.execute("INSERT INTO usuario (nombre_user, apellido_user) VALUES (?,?)",(nombre_user,apellido_user))
+            self.conexion.conn.commit()
+            print(f"el usuario {nombre_user} {apellido_user} registrado con exito.")
+        except sqlite3.Error as error:
+            print(f"Fallo en la base de datos: {error}")
 
-ruta_db = "C:/Users/POWER/recordatorios_proyecto_2.db-journal"    
+ruta_db = "C:/Users/POWER/recordatorios_proyecto_2.db"
 conexion = ConexionBD(ruta_db)
         
