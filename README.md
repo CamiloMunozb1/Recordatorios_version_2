@@ -39,7 +39,7 @@ Optimización de Consultas: Mejora en las operaciones de base de datos para un r
 Las contribuciones son bienvenidas. Si deseas colaborar, por favor sigue los siguientes pasos:
 1. Haz un fork de este repositorio.
 2. Crea una nueva rama con tu función o corrección:
-     git checkout -b nombre-de-tu-rama
+        git checkout -b nombre-de-tu-rama
 3. Realiza tus cambios y haz commit.
 4. Sube tus cambios.
 5. Abre un Pull Request en este repositorio.
